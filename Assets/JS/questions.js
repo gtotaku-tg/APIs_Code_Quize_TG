@@ -45,3 +45,44 @@ var quizQuestions = [
         ]
       }
   ];
+  // //set up quiz variables
+  // let currentQuestionIndex = 0;
+  // let score = 0;
+
+  // //get reference to the quiz element
+  // const quizContainer = document.getElementById('quiz-container');
+  // const questtionElement = document.getElementById('question');
+  // const answerButtonsElement = document.getElementById('answer-buttons');
+
+  // //add event listener to the start button
+  // document.getElementById('start-btn').addEventListener('click', startQuiz);
+ 
+  // function startQuiz() {
+  //   console.log('started');
+  //   //start timer and display first question
+  //   //implement quiz logic here 
+  //   document.getElementById('start-btn').style.display = 'none';
+  //   //start timer and diaplay first question
+  //   const timerInterval = setInterval(function() {
+  //     //decrement time remaining
+  //     timeRemaing--;
+  //     //update timer display
+  //     document.getElementById('timer').textContent = "Time remaining: " + timeRemaing;
+  //     //check if time has run out
+  //     if (timeRemaing === 0) {
+  //       clearInterval(timerInterval);
+  //       endQuiz();
+  //     }
+  //   }, 1000);
+  //   //implement quiz logic
+  //   showQuestion();
+  // }
+
+  // function showQuestion() {
+  //   //display current question and answers
+  //   const currentQuestion = quizQuestions[currentQuestionIndex];
+  //   questtionElement.innerText = currentQuestion.question;
+  //   answerButtonsElement.innerHTML = '';
+
+
+  // }
