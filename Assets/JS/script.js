@@ -3,8 +3,10 @@ var startButton = document.getElementById("start-btn");
 var startPage = document.getElementById("start-page");
 var countDownTimer = document.getElementById("countdown-timer");
 var quizPage = document.getElementById("quiz-page");
-var title = document.getElementById("title")
-
+var title = document.getElementById("title");
+var answers = document.getElementById("answers");
+var currentQuestionIndex = 0;
+var score = 0;
 var time = 85;
 var timer;
 
@@ -16,13 +18,44 @@ function start() {
   // start the timer
   startTimer();
   // display the first question
-    displayQuestion();
+  displayQuestion();
 }
 
 function displayQuestion() {
-// disply the  text from the first item in array in the title element
-title.textContent=quizQuestions[0].question
-title.textContent=quizQuestions[answers]
+  // disply the  text from the first item in array in the title element
+  title.textContent = quizQuestions[currentQuestionIndex].question;
+  // display the answers from the first itme in array
+  answers.innerHTML = "";
+  for (var i = 0; i < 4; i++) {
+    // create button element
+    var ansBut = document.createElement("button");
+    // add the text content to the button element
+    ansBut.textContent = quizQuestions[currentQuestionIndex].answers[i];
+    ansBut.setAttribute(
+      "value",
+      quizQuestions[currentQuestionIndex].answers[i]
+    );
+    ansBut.addEventListener("click", click);
+    // append the button to the answer div
+    answers.appendChild(ansBut);
+  }
+}
+
+function click() {
+  if (this.value !== quizQuestions[currentQuestionIndex].correctAnswer) {
+    time -= 10;
+  }
+  currentQuestionIndex++;
+  if (currentQuestionIndex === 5 || time === 0) {
+    // should end game
+    clearInterval(timer);
+    alert("game over");
+  } else {
+    displayQuestion();
+  }
+}
+function calculateScore(){
+  
 }
 
 function startTimer() {
@@ -31,21 +64,14 @@ function startTimer() {
     time--;
     // display the time on the page
     countDownTimer.textContent = "Countdown: " + time;
+    
   }, 1000);
 }
 
 startButton.addEventListener("click", start);
 
-// const countDown= document.getElementById('countdown-timer');
-// (function() {
-//     var sec=0;
-//     countDown=setInterval(function() {
-
 startPage.addEventListener("click", startQuiz);
 //add event listener to the start button
-
-//add timer
-const timeLimit = 85;
 
 function startQuiz() {
   console.log("started");
