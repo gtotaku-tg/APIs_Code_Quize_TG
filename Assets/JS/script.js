@@ -73,10 +73,4 @@ startButton.addEventListener("click", start);
 startPage.addEventListener("click", startQuiz);
 //add event listener to the start button
 
-function startQuiz() {
-  console.log("started");
-  startButton.style.display = "none";
-  //start timer and display first question
 
-  //implement quiz logic here
-}
