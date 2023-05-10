@@ -49,7 +49,6 @@ function click() {
   if (currentQuestionIndex === 5 || time === 0) {
     // should end game
     clearInterval(timer);
-    alert("game over");
   } else {
     displayQuestion();
   }
