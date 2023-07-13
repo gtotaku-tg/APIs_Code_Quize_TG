@@ -9,11 +9,11 @@ nav {
     color:wheat;
     background-color: #353535;
   }
-  .nounderline {
+  .scorepage {
     text-decoration: none;
     color: wheat;
   }
-  .nounderline:hover {
+  .scorepage:hover {
     color: #6b8d8b;
     text-decoration: underline;
   }
