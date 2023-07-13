@@ -14,6 +14,7 @@ var initialsEl = document.getElementById("initials");
 var submitButton = document.getElementById("submit_btn");
 var highScorePage = document.getElementById("highscore-page");
 var highScoreList = document.getElementById("highscores");
+var scorepage = document.getElementById("scorepage");
 var clearHistoryScore = document.getElementById("clear-btn");
 var goBack = document.getElementById("goback-btn");
 
@@ -119,6 +120,7 @@ function saveHighScore() {
   localStorage.setItem("highScores", JSON.stringify(totalHighScores));
 
   displayHistoryScore();
+  // scorepagePressed () ;
 }
 
 // Score page hide or show by click
@@ -135,15 +137,28 @@ function displayHistoryScore() {
   })
 }
 
+// function scorepagePressed () {
+//   let scorepagePressed = false;
+//   if(!scorepagePressed){
+//     scorepagePressed = true;
+//   } else{
+//     history.back
+//   } 
+// }
+
+scorepage.addEventListener("click", displayHistoryScore);
+
 
 startButton.addEventListener("click", start);
 clearHistoryScore.addEventListener("click", function () {
   localStorage.clear();
   highScoreList.innerHTML = "";
 });
+
 goBack.addEventListener("click", function () {
   window.location.href="";
   highScorePage.classList.add("hide");
   startPage.classList.remove("hide");
 });
+
 submitButton.addEventListener("click", saveHighScore);
