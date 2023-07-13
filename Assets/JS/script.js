@@ -65,7 +65,7 @@ function click() {
     resultsToEachQ.textContent = "Correct answer";
     score += 10;
   }
-
+  
   setTimeout(function () {
     resultsToEachQ.textContent = "";
 
@@ -142,6 +142,7 @@ clearHistoryScore.addEventListener("click", function () {
   highScoreList.innerHTML = "";
 });
 goBack.addEventListener("click", function () {
+  window.location.href="";
   highScorePage.classList.add("hide");
   startPage.classList.remove("hide");
 });
